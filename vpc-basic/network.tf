@@ -41,14 +41,14 @@ resource "aws_security_group" "sg" {
     from_port = 5000
     to_port = 5000
     protocol = "tcp"
-    cidr_blocks = [var.xps_ip]
+    cidr_blocks = [var.XPS_IP]
   }
 
   ingress {
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = [var.xps_ip]
+    cidr_blocks = [var.XPS_IP]
   }
 
   tags = {
