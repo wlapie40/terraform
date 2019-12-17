@@ -2,6 +2,18 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+terraform {
+  backend "s3" {
+    bucket         = "sfigiel-terraform-state"
+    key            = "~/Projects/Terraform/Learning/vpc-basic/terraform.tfstate"
+    region         = "eu-west-2"
+    dynamodb_table = "sfigiel-terraform-file-locks"
+    encrypt        = true
+
+  }
+}
+
+
 resource "aws_launch_configuration" "example" {
   image_id = "ami-05f37c3995fffb4fd"
   instance_type = "t2.micro"

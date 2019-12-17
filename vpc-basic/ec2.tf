@@ -16,3 +16,14 @@ resource "aws_key_pair" "key_pair" {
   key_name = "key_pair"
   public_key = "${file("~/aws_perm/terraform-keypair-public")}"
 }
+
+//terraform {
+//  backend "s3" {
+//    bucket         = "sfigiel-terraform-state"
+//    key            = "vpc-basic/terraform.tfstate"
+//    region         = "eu-west-2"
+//    dynamodb_table = "sfigiel-terraform-file-locks"
+//    encrypt        = true
+//
+//  }
+//}
